@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Jhili ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Background Music -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Music Button -->
+
+<div class="music-btn" onclick="toggleMusic()">
+🔊
+</div>
+
+<!-- Stars -->
+
+<div class="stars"></div>
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+<h3>A Special Day ❤️</h3>
+
+<h1>Happy Birthday</h1>
+
+<h2>Jhili</h2>
+
+<p>
+Today is your special day.
+This little surprise is made only for you.
+</p>
+
+<button onclick="nextPage(2)">
+Start The Surprise 
+</button>
+
+</section>
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+<div class="letter">
+
+<h2>Dear Jhili ❤️</h2>
+
+<p>
+
+Happy Birthday to the most beautiful person in my life.
+
+May your smile always stay bright.
+
+May God bless you with happiness, love and success.
+
+Thank you for being so special.
+
+I wish all your dreams come true.
+
+Happy Birthday Once Again ❤️
+
+</p>
+
+<button onclick="nextPage(3)">
+Continue ➜
+</button>
+
+</div>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section class="page" id="page3">
+
+<h1>Words For You</h1>
+
+<div class="word">❤️ Beautiful</div>
+
+<div class="word">🌹 Sweet</div>
+
+<div class="word">😊 Caring</div>
+
+<div class="word">✨ Amazing</div>
+
+<button onclick="nextPage(4)">
+Next
+</button>
+
+</section>
+
+<!-- PAGE 4 -->
+
+<section class="page" id="page4">
+
+<h1>Birthday Wish ⭐</h1>
+
+<p>Click the Star</p>
+
+<div class="wish-star" onclick="showWish()">
+
+⭐
+
+</div>
+
+<p id="wishText"></p>
+
+<button onclick="nextPage(5)">
+Next
+</button>
+
+</section>
+
+<!-- PAGE 5 -->
+
+<section class="page" id="page5">
+
+<h1>Your Gift </h1>
+
+<img src="images/gift.png" class="gift">
+
+<p>Special Gift For Jhili ❤️</p>
+
+<button onclick="nextPage(6)">
+Open Gift
+</button>
+
+</section>
+
+<!-- PAGE 6 -->
+
+<section class="page" id="page6">
+
+<h1>Special Message ❤️</h1>
+
+<div class="card">
+
+You are the best gift in my life.
+
+Stay Happy...
+
+Stay Blessed...
+
+Happy Birthday Jhili ❤️
+
+</div>
+
+<button onclick="nextPage(7)">
+Celebrate 
+</button>
+
+</section>
+
+<!-- PAGE 7 -->
+<section class="page" id="page7">
+
+<h1>Birthday Cake </h1>
+
+<img id="cakeImage" src="images/Light Off.png" class="cake">
+
+<button onclick="lightCandle()">
+Light Candles
+</button>
+
+</section>
+
+<!-- PAGE 8 -->
+<section class="page" id="page8">
+
+<h1>Blow The Candles ❤️</h1>
+
+<img id="cakeImage2" src="images/Light on.png" class="cake">
+
+<button onclick="blowCandle()">
+Blow Candles
+</button>
+
+</section>
+
+<!-- PAGE 9 -->
+
+<section class="page" id="page9">
+
+<h1>🎉 Happy Birthday Jhili 🎉</h1>
+
+<img src="images/Last.png" class="cat">
+
+<p>
+
+May your life always be filled with happiness,
+love and beautiful memories.
+
+Happy Birthday Jhili ❤️
+
+</p>
+
+<button onclick="location.reload()">
+
+Complete
+
+</button>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
