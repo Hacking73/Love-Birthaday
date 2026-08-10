@@ -1,86 +1,221 @@
-```css
-/* =========================================
-   💕 HAPPY BIRTHDAY JHILI — LOVE THEME
-   ========================================= */
+/* =====================================================
+   HAPPY BIRTHDAY JHILI ❤️
+   PREMIUM CINEMATIC LOVE THEME
+===================================================== */
 
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html,body{
-    width:100%;
-    height:100%;
+html,
+body {
+    width: 100%;
+    height: 100%;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    color:#fff;
-    overflow:hidden;
+body {
+    font-family: "Poppins", sans-serif;
+
+    color: #fff;
+
+    overflow: hidden;
+
     background:
-        radial-gradient(circle at 20% 20%, rgba(255,50,100,.25), transparent 35%),
-        radial-gradient(circle at 80% 80%, rgba(255,0,80,.20), transparent 35%),
-        linear-gradient(135deg,#09000a,#18000d,#09000a);
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(150, 10, 50, 0.28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(255, 20, 80, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(180, 20, 80, 0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050005 0%,
+            #120009 35%,
+            #25000f 55%,
+            #080005 100%
+        );
 }
 
-/* =========================================
-   🌹 ROMANTIC BACKGROUND
-   ========================================= */
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:-50%;
+/* =====================================================
+   CINEMATIC BACKGROUND GLOW
+===================================================== */
+
+.background-glow {
+    position: fixed;
+
+    width: 80vw;
+    height: 80vw;
+
+    max-width: 900px;
+    max-height: 900px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
     background:
-        radial-gradient(circle, rgba(255,70,120,.10) 0%, transparent 35%),
-        radial-gradient(circle, rgba(255,0,80,.08) 0%, transparent 40%);
-    animation:romanticGlow 12s ease-in-out infinite alternate;
-    pointer-events:none;
-    z-index:-4;
+        radial-gradient(
+            circle,
+            rgba(255, 30, 100, 0.15),
+            rgba(120, 0, 40, 0.08) 35%,
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    animation: backgroundPulse 8s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -10;
 }
 
-@keyframes romanticGlow{
-    0%{
-        transform:scale(1) rotate(0deg);
+@keyframes backgroundPulse {
+
+    0% {
+        transform: translate(-50%, -50%) scale(0.85);
+        opacity: 0.55;
     }
-    100%{
-        transform:scale(1.3) rotate(15deg);
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 1;
     }
 }
 
-/* =========================================
-   ✨ STARS
-   ========================================= */
 
-.stars{
-    position:fixed;
-    width:100%;
-    height:100%;
-    inset:0;
+/* =====================================================
+   BIG GLOWING HEART
+===================================================== */
+
+.heart-glow {
+    position: fixed;
+
+    width: 250px;
+    height: 250px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) rotate(-45deg);
+
+    background: rgba(255, 25, 90, 0.055);
+
+    border-radius: 30px;
+
+    filter: blur(25px);
+
+    z-index: -8;
+
+    animation: heartBreath 4s ease-in-out infinite;
+}
+
+.heart-glow::before,
+.heart-glow::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background: rgba(255, 25, 90, 0.055);
+
+    border-radius: 50%;
+}
+
+.heart-glow::before {
+    top: -125px;
+    left: 0;
+}
+
+.heart-glow::after {
+    left: 125px;
+    top: 0;
+}
+
+@keyframes heartBreath {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(0.85);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.stars {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
 
     background-image:
-        radial-gradient(rgba(255,255,255,.9) 1px,transparent 1px),
-        radial-gradient(rgba(255,120,160,.7) 1px,transparent 1px),
-        radial-gradient(rgba(255,210,220,.5) 1px,transparent 1px);
+        radial-gradient(
+            rgba(255, 255, 255, 0.9) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            rgba(255, 100, 150, 0.7) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            rgba(255, 200, 220, 0.5) 1px,
+            transparent 1px
+        );
 
     background-size:
         90px 90px,
-        140px 140px,
-        200px 200px;
+        145px 145px,
+        210px 210px;
 
-    animation:starsMove 35s linear infinite;
-    z-index:-3;
-    opacity:.8;
+    animation: starMove 40s linear infinite;
+
+    opacity: 0.6;
+
+    z-index: -6;
 }
 
-@keyframes starsMove{
-    from{
-        background-position:0 0,0 0,0 0;
+@keyframes starMove {
+
+    from {
+        background-position:
+            0 0,
+            0 0,
+            0 0;
     }
 
-    to{
+    to {
         background-position:
             0 1000px,
             100px 700px,
@@ -88,715 +223,1088 @@ body::before{
     }
 }
 
-/* =========================================
-   ❤️ FLOATING HEARTS
-   ========================================= */
 
-body::after{
-    content:"❤️   💕   💗   💖   💕   ❤️   💗";
-    position:fixed;
-    left:0;
-    bottom:-80px;
-    width:100%;
-    font-size:28px;
-    letter-spacing:45px;
-    opacity:.18;
-    white-space:nowrap;
-    pointer-events:none;
-    animation:heartsFloat 15s linear infinite;
-    z-index:-2;
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+#heartContainer {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -2;
 }
 
-@keyframes heartsFloat{
-    0%{
-        transform:translateY(0) translateX(0);
-    }
+.floating-heart {
+    position: absolute;
 
-    50%{
-        transform:translateY(-55vh) translateX(20px);
-    }
+    bottom: -60px;
 
-    100%{
-        transform:translateY(-115vh) translateX(-20px);
-    }
-}
-
-/* =========================================
-   📄 PAGE
-   ========================================= */
-
-.page{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100vh;
-
-    display:none;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-
-    text-align:center;
-    padding:20px;
-
-    animation:pageEnter .9s cubic-bezier(.2,.8,.2,1);
-}
-
-.active{
-    display:flex;
-}
-
-@keyframes pageEnter{
-    0%{
-        opacity:0;
-        transform:scale(.85) translateY(30px);
-        filter:blur(8px);
-    }
-
-    60%{
-        opacity:1;
-    }
-
-    100%{
-        opacity:1;
-        transform:scale(1) translateY(0);
-        filter:blur(0);
-    }
-}
-
-/* =========================================
-   💕 TEXT
-   ========================================= */
-
-h1{
-    font-size:60px;
-    font-family:'Playfair Display',serif;
-
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #ffb6c9,
-        #fff
-    );
-
-    background-size:200% auto;
-
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-
-    animation:textShine 4s linear infinite;
-
-    text-shadow:0 0 25px rgba(255,80,130,.25);
-}
-
-@keyframes textShine{
-    to{
-        background-position:200% center;
-    }
-}
-
-h2{
-    color:#ff8fab;
-    margin:20px 0;
-    font-size:40px;
+    color: #ff4775;
 
     text-shadow:
-        0 0 10px rgba(255,70,120,.7),
-        0 0 25px rgba(255,70,120,.35);
+        0 0 10px rgba(255, 50, 100, 0.8),
+        0 0 25px rgba(255, 30, 80, 0.45);
 
-    animation:nameGlow 2.5s ease-in-out infinite alternate;
+    opacity: 0;
+
+    animation: floatHeart linear forwards;
 }
 
-@keyframes nameGlow{
-    from{
-        text-shadow:0 0 10px rgba(255,70,120,.4);
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg)
+            scale(0.6);
+
+        opacity: 0;
     }
 
-    to{
+    10% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(35px)
+            rotate(12deg)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(-35px)
+            rotate(-15deg)
+            scale(1.25);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    animation: pageEnter 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes pageEnter {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.88)
+            translateY(30px);
+
+        filter: blur(10px);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =====================================================
+   INTRO HEART
+===================================================== */
+
+.intro-heart {
+    font-size: 55px;
+
+    margin-bottom: 5px;
+
+    filter:
+        drop-shadow(0 0 12px rgba(255, 40, 100, 0.8))
+        drop-shadow(0 0 35px rgba(255, 40, 100, 0.45));
+
+    animation: introHeart 1.8s ease-in-out infinite;
+}
+
+@keyframes introHeart {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.small-title,
+.section-label {
+    color: #ff8da9;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px rgba(255, 70, 120, 0.5);
+}
+
+
+/* =====================================================
+   HEADINGS
+===================================================== */
+
+h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 7vw, 72px);
+
+    line-height: 1.1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffb3c7,
+            #ffffff,
+            #ff7e9e,
+            #ffffff
+        );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: textShine 5s linear infinite;
+
+    text-shadow:
+        0 0 30px rgba(255, 70, 120, 0.18);
+}
+
+@keyframes textShine {
+
+    to {
+        background-position: 250% center;
+    }
+}
+
+h2 {
+    font-family: "Playfair Display", serif;
+
+    color: #ff8fab;
+
+    margin: 18px 0;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    text-shadow:
+        0 0 15px rgba(255, 60, 110, 0.7),
+        0 0 35px rgba(255, 30, 80, 0.3);
+
+    animation: nameGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes nameGlow {
+
+    from {
         text-shadow:
-            0 0 20px rgba(255,70,120,.9),
-            0 0 40px rgba(255,70,120,.4);
+            0 0 10px rgba(255, 60, 110, 0.4);
+    }
+
+    to {
+        text-shadow:
+            0 0 20px rgba(255, 60, 110, 0.9),
+            0 0 45px rgba(255, 30, 80, 0.45);
     }
 }
 
-h3{
-    color:#ff9ab5;
-    margin-bottom:15px;
-    letter-spacing:2px;
+p {
+    max-width: 700px;
+
+    color: #f5dce4;
+
+    font-size: 18px;
+
+    line-height: 1.8;
 }
 
-p{
-    max-width:700px;
-    line-height:1.8;
-    font-size:20px;
-    color:#f5dfe5;
+strong {
+    color: #ff9ab5;
 }
 
-/* =========================================
-   💗 BUTTON
-   ========================================= */
 
-button{
-    margin-top:35px;
+/* =====================================================
+   DIVIDER
+===================================================== */
 
-    padding:17px 45px;
+.divider {
+    display: flex;
 
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:50px;
+    align-items: center;
+
+    gap: 15px;
+
+    width: 180px;
+
+    margin: 10px auto 20px;
+
+    color: #ff6689;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 100, 140, 0.7)
+        );
+}
+
+.divider::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 100, 140, 0.7),
+            transparent
+        );
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button {
+    position: relative;
+
+    margin-top: 32px;
+
+    padding: 16px 38px;
+
+    border: 1px solid rgba(255, 180, 200, 0.25);
+
+    border-radius: 100px;
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
 
     background:
         linear-gradient(
             135deg,
             #ff416c,
-            #ff174f
+            #d90045
         );
 
-    color:#fff;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(255, 40, 100, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
-    font-size:20px;
-    font-weight:600;
-
-    cursor:pointer;
+    overflow: hidden;
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+button::before {
+    content: "";
+
+    position: absolute;
+
+    left: -120%;
+
+    top: 0;
+
+    width: 70%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: 0.7s;
+}
+
+button:hover::before {
+    left: 140%;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.05);
 
     box-shadow:
-        0 0 15px rgba(255,50,100,.55),
-        0 0 35px rgba(255,50,100,.25);
-
-    position:relative;
-    overflow:hidden;
+        0 12px 30px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 40, 100, 0.75),
+        0 0 60px rgba(255, 40, 100, 0.25);
 }
 
-button::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:60%;
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.4),
-        transparent
-    );
-
-    transform:skewX(-20deg);
-    transition:.6s;
+button:active {
+    transform: scale(0.95);
 }
 
-button:hover::before{
-    left:130%;
+button span {
+    margin-left: 8px;
 }
 
-button:hover{
-    transform:scale(1.08) translateY(-3px);
 
-    box-shadow:
-        0 0 20px rgba(255,50,100,.8),
-        0 0 50px rgba(255,50,100,.4);
-}
+/* =====================================================
+   GLASS LETTER
+===================================================== */
 
-button:active{
-    transform:scale(.96);
-}
+.letter {
+    width: min(92%, 720px);
 
-/* =========================================
-   💌 LETTER
-   ========================================= */
+    max-height: 80vh;
 
-.letter{
-    background:rgba(35,8,20,.65);
+    overflow-y: auto;
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    padding: 38px;
 
-    border:1px solid rgba(255,150,180,.25);
+    border-radius: 28px;
 
-    padding:40px;
-
-    border-radius:25px;
-
-    width:90%;
-    max-width:700px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.45),
-        0 0 35px rgba(255,50,100,.12);
-
-    animation:letterFloat 4s ease-in-out infinite;
-}
-
-@keyframes letterFloat{
-    50%{
-        transform:translateY(-8px);
-    }
-}
-
-/* =========================================
-   🌹 WORD CARDS
-   ========================================= */
-
-.word{
-    background:rgba(50,10,25,.65);
-
-    backdrop-filter:blur(12px);
-
-    border:1px solid rgba(255,130,160,.18);
-
-    margin:12px;
-
-    padding:18px 35px;
-
-    border-radius:18px;
-
-    font-size:24px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.25),
-        0 0 15px rgba(255,50,100,.08);
-
-    animation:
-        float 3s ease-in-out infinite,
-        wordGlow 3s ease-in-out infinite alternate;
-
-    transition:.35s;
-}
-
-.word:hover{
-    transform:scale(1.07) translateY(-5px);
-
-    border-color:rgba(255,130,160,.5);
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,.35),
-        0 0 25px rgba(255,60,110,.35);
-}
-
-.word:nth-child(2){
-    animation-delay:.3s;
-}
-
-.word:nth-child(3){
-    animation-delay:.6s;
-}
-
-.word:nth-child(4){
-    animation-delay:.9s;
-}
-
-@keyframes float{
-    50%{
-        transform:translateY(-10px);
-    }
-}
-
-@keyframes wordGlow{
-    from{
-        box-shadow:0 0 10px rgba(255,50,100,.05);
-    }
-
-    to{
-        box-shadow:0 0 25px rgba(255,50,100,.2);
-    }
-}
-
-/* =========================================
-   ⭐ WISH STAR
-   ========================================= */
-
-.wish-star{
-    font-size:90px;
-
-    cursor:pointer;
-
-    transition:.4s;
-
-    filter:
-        drop-shadow(0 0 10px gold)
-        drop-shadow(0 0 25px rgba(255,180,0,.5));
-
-    animation:
-        starPulse 1.8s ease-in-out infinite,
-        starRotate 6s linear infinite;
-}
-
-.wish-star:hover{
-    transform:scale(1.25);
-}
-
-@keyframes starPulse{
-    50%{
-        filter:
-            drop-shadow(0 0 25px gold)
-            drop-shadow(0 0 50px rgba(255,180,0,.7));
-    }
-}
-
-@keyframes starRotate{
-    50%{
-        transform:rotate(8deg) scale(1.08);
-    }
-}
-
-/* =========================================
-   🎁 GIFT
-   ========================================= */
-
-.gift{
-    width:240px;
-
-    filter:
-        drop-shadow(0 15px 25px rgba(0,0,0,.4))
-        drop-shadow(0 0 20px rgba(255,50,100,.3));
-
-    animation:
-        giftFloat 2.5s ease-in-out infinite,
-        giftGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes giftFloat{
-    50%{
-        transform:translateY(-15px) rotate(2deg);
-    }
-}
-
-@keyframes giftGlow{
-    from{
-        filter:drop-shadow(0 10px 20px rgba(0,0,0,.4));
-    }
-
-    to{
-        filter:
-            drop-shadow(0 15px 25px rgba(0,0,0,.4))
-            drop-shadow(0 0 30px rgba(255,50,100,.5));
-    }
-}
-
-/* =========================================
-   💖 MESSAGE CARD
-   ========================================= */
-
-.card{
     background:
         linear-gradient(
             135deg,
-            rgba(60,10,30,.75),
-            rgba(25,5,15,.75)
+            rgba(65, 8, 30, 0.65),
+            rgba(20, 3, 12, 0.7)
         );
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-    border:1px solid rgba(255,150,180,.25);
-
-    padding:35px;
-
-    border-radius:25px;
-
-    font-size:24px;
-    line-height:1.8;
-
-    max-width:700px;
+    border: 1px solid rgba(255, 160, 185, 0.2);
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,.4),
-        0 0 30px rgba(255,50,100,.15);
+        0 25px 70px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(255, 40, 100, 0.12);
 
-    animation:cardFloat 4s ease-in-out infinite;
+    animation: glassFloat 5s ease-in-out infinite;
 }
 
-@keyframes cardFloat{
-    50%{
-        transform:translateY(-8px);
+@keyframes glassFloat {
+
+    50% {
+        transform: translateY(-8px);
     }
 }
 
-/* =========================================
-   🎂 CAKE
-   ========================================= */
-
-.cake{
-    width:280px;
+.card-heart {
+    font-size: 38px;
 
     filter:
-        drop-shadow(0 15px 25px rgba(0,0,0,.4))
-        drop-shadow(0 0 25px rgba(255,100,150,.25));
+        drop-shadow(0 0 15px rgba(255, 40, 100, 0.7));
 
-    animation:cakeFloat 3s ease-in-out infinite;
+    animation: heartBeat 1.8s infinite;
 }
 
-@keyframes cakeFloat{
-    50%{
-        transform:translateY(-12px);
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
     }
 }
 
-/* =========================================
-   🐱 FINAL IMAGE
-   ========================================= */
+.line {
+    width: 80px;
 
-.cat{
-    width:260px;
+    height: 2px;
 
-    border-radius:25px;
+    margin: 5px auto 22px;
 
-    border:2px solid rgba(255,150,180,.35);
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff6f91,
+            transparent
+        );
+}
+
+
+/* =====================================================
+   WORD CARDS
+===================================================== */
+
+.words-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.word {
+    width: min(330px, 85vw);
+
+    margin: 7px;
+
+    padding: 14px 22px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(75, 10, 35, 0.65),
+            rgba(25, 5, 15, 0.7)
+        );
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 130, 160, 0.18);
+
+    font-size: 20px;
 
     box-shadow:
-        0 0 20px rgba(255,50,100,.4),
-        0 15px 40px rgba(0,0,0,.45);
+        0 10px 25px rgba(0, 0, 0, 0.25);
 
-    margin:20px;
+    animation: wordFloat 3.5s ease-in-out infinite;
+
+    transition: 0.35s;
+}
+
+.word:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.word:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.word:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.word:hover {
+    transform: scale(1.05);
+
+    border-color: rgba(255, 130, 160, 0.5);
+
+    box-shadow:
+        0 0 25px rgba(255, 50, 100, 0.3);
+}
+
+.word span {
+    margin-right: 8px;
+}
+
+@keyframes wordFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* =====================================================
+   WISH STAR
+===================================================== */
+
+.wish-star {
+    margin-top: 15px;
+
+    font-size: 90px;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(0 0 10px gold)
+        drop-shadow(0 0 30px rgba(255, 180, 0, 0.5));
 
     animation:
-        finalImage 3s ease-in-out infinite;
+        starPulse 1.8s ease-in-out infinite;
+
+    transition: 0.35s;
 }
 
-@keyframes finalImage{
-    50%{
-        transform:scale(1.03);
-        box-shadow:
-            0 0 35px rgba(255,50,100,.65),
-            0 15px 40px rgba(0,0,0,.45);
+.wish-star:hover {
+    transform: scale(1.25);
+}
+
+@keyframes starPulse {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+    }
+
+    50% {
+        transform: scale(1.12);
     }
 }
 
-/* =========================================
-   🔊 MUSIC BUTTON
-   ========================================= */
+.wish-text {
+    min-height: 35px;
 
-.music-btn{
-    position:fixed;
+    margin-top: 10px;
 
-    right:20px;
-    top:20px;
+    color: #ffb3c7;
 
-    width:58px;
-    height:58px;
+    font-weight: 500;
 
-    background:rgba(40,5,20,.7);
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,150,180,.25);
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:28px;
-
-    cursor:pointer;
-
-    z-index:999;
-
-    box-shadow:
-        0 0 15px rgba(255,50,100,.35);
-
-    transition:.35s;
-
-    animation:musicPulse 2s infinite;
+    animation: wishAppear 0.6s ease;
 }
 
-.music-btn:hover{
-    transform:scale(1.1);
+@keyframes wishAppear {
 
-    box-shadow:
-        0 0 30px rgba(255,50,100,.7);
-}
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
 
-@keyframes musicPulse{
-    50%{
-        box-shadow:
-            0 0 25px rgba(255,50,100,.6);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* =========================================
-   🎉 CONFETTI
-   ========================================= */
 
-.confetti{
-    position:fixed;
+/* =====================================================
+   GIFT
+===================================================== */
 
-    top:-20px;
+.gift {
+    width: 240px;
 
-    width:10px;
-    height:10px;
+    margin: 10px 0;
 
-    border-radius:2px;
+    filter:
+        drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 25px rgba(255, 40, 100, 0.3));
 
-    background:#ff416c;
-
-    animation:fall linear forwards;
-
-    z-index:999;
+    animation: giftFloat 2.7s ease-in-out infinite;
 }
 
-.confetti:nth-child(2n){
-    background:#ff9ab5;
+@keyframes giftFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
 }
 
-.confetti:nth-child(3n){
-    background:#ffd166;
+
+/* =====================================================
+   MESSAGE CARD
+===================================================== */
+
+.card {
+    width: min(90%, 650px);
+
+    padding: 35px;
+
+    margin-top: 15px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(70, 8, 32, 0.7),
+            rgba(18, 3, 12, 0.75)
+        );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 160, 185, 0.2);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(255, 40, 100, 0.12);
+
+    animation: cardFloat 4s ease-in-out infinite;
 }
 
-.confetti:nth-child(4n){
-    background:#fff;
+.card-top-heart {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+
+    animation: heartBeat 1.8s infinite;
 }
 
-@keyframes fall{
-    from{
+@keyframes cardFloat {
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+.cake {
+    width: 280px;
+
+    margin: 10px 0;
+
+    filter:
+        drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 25px rgba(255, 80, 130, 0.3));
+
+    animation: cakeFloat 3s ease-in-out infinite;
+}
+
+@keyframes cakeFloat {
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =====================================================
+   FINAL IMAGE
+===================================================== */
+
+.cat {
+    width: min(260px, 65vw);
+
+    margin: 15px;
+
+    border-radius: 25px;
+
+    border: 2px solid rgba(255, 150, 180, 0.3);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(255, 40, 100, 0.45);
+
+    animation: finalImage 3s ease-in-out infinite;
+}
+
+@keyframes finalImage {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035);
+    }
+}
+
+
+/* =====================================================
+   FINAL HEARTS
+===================================================== */
+
+.final-hearts {
+    font-size: 25px;
+
+    letter-spacing: 10px;
+
+    margin-bottom: 5px;
+
+    animation: finalHeartGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes finalHeartGlow {
+
+    from {
+        filter:
+            drop-shadow(0 0 5px rgba(255, 50, 100, 0.4));
+    }
+
+    to {
+        filter:
+            drop-shadow(0 0 20px rgba(255, 50, 100, 0.9));
+    }
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-btn {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(45, 5, 20, 0.7);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 150, 180, 0.25);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 999;
+
+    box-shadow:
+        0 0 20px rgba(255, 40, 100, 0.35);
+
+    transition: 0.35s;
+
+    animation: musicGlow 2s ease-in-out infinite alternate;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 30px rgba(255, 40, 100, 0.75);
+}
+
+@keyframes musicGlow {
+
+    from {
+        box-shadow:
+            0 0 10px rgba(255, 40, 100, 0.25);
+    }
+
+    to {
+        box-shadow:
+            0 0 25px rgba(255, 40, 100, 0.6);
+    }
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti {
+    position: fixed;
+
+    top: -30px;
+
+    width: 9px;
+    height: 14px;
+
+    border-radius: 2px;
+
+    background: #ff4775;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
         transform:
-            translateY(-20px)
+            translateY(-30px)
             rotate(0deg);
+
+        opacity: 1;
     }
 
-    to{
+    100% {
         transform:
             translateY(110vh)
-            rotate(720deg);
+            rotate(900deg);
+
+        opacity: 0;
     }
 }
 
-/* =========================================
-   ❤️ FINAL PAGE EXTRA GLOW
-   ========================================= */
 
-#page9 h1{
-    animation:
-        textShine 4s linear infinite,
-        finalTitle 2s ease-in-out infinite alternate;
+/* =====================================================
+   HEART BURST
+===================================================== */
+
+.burst-heart {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    pointer-events: none;
+
+    z-index: 10000;
+
+    font-size: 25px;
+
+    animation: burstHeart 1.6s ease-out forwards;
 }
 
-@keyframes finalTitle{
-    from{
-        transform:scale(1);
+@keyframes burstHeart {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.3);
+
+        opacity: 1;
     }
 
-    to{
-        transform:scale(1.04);
-    }
-}
+    100% {
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.5);
 
-/* =========================================
-   📱 MOBILE
-   ========================================= */
-
-@media(max-width:768px){
-
-    h1{
-        font-size:40px;
-    }
-
-    h2{
-        font-size:28px;
-    }
-
-    h3{
-        font-size:18px;
-    }
-
-    p{
-        font-size:17px;
-    }
-
-    button{
-        width:90%;
-        max-width:350px;
-        font-size:18px;
-        padding:15px 25px;
-    }
-
-    .letter{
-        padding:25px 20px;
-        width:94%;
-        max-height:75vh;
-        overflow:auto;
-    }
-
-    .word{
-        font-size:18px;
-        padding:15px 25px;
-        width:85%;
-    }
-
-    .wish-star{
-        font-size:70px;
-    }
-
-    .gift{
-        width:180px;
-    }
-
-    .cake{
-        width:220px;
-    }
-
-    .cat{
-        width:180px;
-    }
-
-    .card{
-        padding:25px 20px;
-        font-size:19px;
-        width:92%;
-    }
-
-    .music-btn{
-        width:50px;
-        height:50px;
-        font-size:24px;
-        right:15px;
-        top:15px;
+        opacity: 0;
     }
 }
 
-/* =========================================
-   📱 VERY SMALL SCREEN
-   ========================================= */
 
-@media(max-height:650px){
+/* =====================================================
+   SCROLLBAR
+===================================================== */
 
-    h1{
-        font-size:34px;
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 80, 120, 0.45);
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .page {
+        padding: 20px;
     }
 
-    h2{
-        font-size:25px;
-        margin:10px 0;
+    .small-title,
+    .section-label {
+        font-size: 10px;
+
+        letter-spacing: 3px;
     }
 
-    p{
-        font-size:15px;
-        line-height:1.5;
+    p {
+        font-size: 16px;
+
+        line-height: 1.65;
     }
 
-    button{
-        margin-top:20px;
-        padding:12px 25px;
+    button {
+        width: min(90%, 340px);
+
+        padding: 15px 25px;
+
+        font-size: 16px;
     }
 
-    .gift{
-        width:140px;
+    .letter {
+        width: 94%;
+
+        padding: 25px 20px;
+
+        max-height: 75vh;
     }
 
-    .cake{
-        width:170px;
+    .gift {
+        width: 185px;
     }
 
-    .cat{
-        width:150px;
-        margin:10px;
+    .cake {
+        width: 220px;
+    }
+
+    .card {
+        width: 94%;
+
+        padding: 25px 20px;
+    }
+
+    .wish-star {
+        font-size: 70px;
+    }
+
+    .music-btn {
+        width: 48px;
+        height: 48px;
+
+        top: 15px;
+        right: 15px;
+
+        font-size: 21px;
+    }
+
+    .intro-heart {
+        font-size: 45px;
     }
 }
-```
+
+
+/* =====================================================
+   SMALL HEIGHT DEVICES
+===================================================== */
+
+@media (max-height: 680px) {
+
+    .page {
+        padding-top: 55px;
+        padding-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 28px;
+
+        margin: 10px 0;
+    }
+
+    p {
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+    button {
+        margin-top: 18px;
+
+        padding: 12px 25px;
+    }
+
+    .gift {
+        width: 140px;
+    }
+
+    .cake {
+        width: 170px;
+    }
+
+    .cat {
+        width: 150px;
+
+        margin: 8px;
+    }
+
+    .letter {
+        padding: 20px;
+    }
+
+    .word {
+        padding: 10px 18px;
+
+        margin: 4px;
+    }
+}
