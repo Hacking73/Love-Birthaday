@@ -1,225 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Jhili ❤️</title>
+    <title>Happy Birthday Jhili ❤️</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- Background Music -->
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
 
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+    <div class="background-glow"></div>
+    <div class="heart-glow"></div>
+    <div class="stars"></div>
 
-<!-- Music Button -->
+    <!-- Animated hearts created by JavaScript -->
+    <div id="heartContainer"></div>
 
-<div class="music-btn" onclick="toggleMusic()">
-🔊
-</div>
+    <!-- =========================
+         MUSIC
+    ========================== -->
 
-<!-- Stars -->
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
 
-<div class="stars"></div>
+    <div class="music-btn" onclick="toggleMusic()" aria-label="Music">
+        🔊
+    </div>
 
-<!-- PAGE 1 -->
+    <!-- =========================
+         PAGE 1
+    ========================== -->
 
-<section class="page active" id="page1">
+    <section class="page active" id="page1">
 
-<h3>A Special Day ❤️</h3>
+        <div class="intro-heart">
+            ❤️
+        </div>
 
-<h1>Happy Birthday</h1>
+        <div class="small-title">
+            A SPECIAL DAY
+        </div>
 
-<h2>Jhili</h2>
+        <h1>Happy Birthday</h1>
 
-<p>
-Today is your special day.
-This little surprise is made only for you.
-</p>
+        <h2>Jhili</h2>
 
-<button onclick="nextPage(2)">
-Start The Surprise 
-</button>
+        <div class="divider">
+            <span>♥</span>
+        </div>
 
-</section>
+        <p>
+            Today is your special day.<br>
+            This little surprise is made only for you. ❤️
+        </p>
 
-<!-- PAGE 2 -->
+        <button onclick="nextPage(2)">
+            Start The Surprise
+            <span>♡</span>
+        </button>
 
-<section class="page" id="page2">
+    </section>
 
-<div class="letter">
+    <!-- =========================
+         PAGE 2
+    ========================== -->
 
-<h2>Dear Jhili ❤️</h2>
+    <section class="page" id="page2">
 
-<p>
+        <div class="letter">
 
-Happy Birthday to the most beautiful person in my life.
+            <div class="card-heart">💌</div>
 
-May your smile always stay bright.
+            <h2>Dear Jhili ❤️</h2>
 
-May God bless you with happiness, love and success.
+            <div class="line"></div>
 
-Thank you for being so special.
+            <p>
+                Happy Birthday to the most beautiful person in my life.
+                <br><br>
 
-I wish all your dreams come true.
+                May your smile always stay bright.
+                <br><br>
 
-Happy Birthday Once Again ❤️
+                May God bless you with happiness, love and success.
+                <br><br>
 
-</p>
+                Thank you for being so special.
+                <br><br>
 
-<button onclick="nextPage(3)">
-Continue ➜
-</button>
+                I wish all your dreams come true.
+                <br><br>
 
-</div>
+                <strong>Happy Birthday Once Again ❤️</strong>
+            </p>
 
-</section>
+            <button onclick="nextPage(3)">
+                Continue ➜
+            </button>
 
-<!-- PAGE 3 -->
+        </div>
 
-<section class="page" id="page3">
+    </section>
 
-<h1>Words For You</h1>
+    <!-- =========================
+         PAGE 3
+    ========================== -->
 
-<div class="word">❤️ Beautiful</div>
+    <section class="page" id="page3">
 
-<div class="word">🌹 Sweet</div>
+        <div class="section-label">
+            FOR YOU ❤️
+        </div>
 
-<div class="word">😊 Caring</div>
+        <h1>Words For You</h1>
 
-<div class="word">✨ Amazing</div>
+        <div class="words-container">
 
-<button onclick="nextPage(4)">
-Next
-</button>
+            <div class="word">
+                <span>❤️</span>
+                Beautiful
+            </div>
 
-</section>
+            <div class="word">
+                <span>🌹</span>
+                Sweet
+            </div>
 
-<!-- PAGE 4 -->
+            <div class="word">
+                <span>😊</span>
+                Caring
+            </div>
 
-<section class="page" id="page4">
+            <div class="word">
+                <span>✨</span>
+                Amazing
+            </div>
 
-<h1>Birthday Wish ⭐</h1>
+        </div>
 
-<p>Click the Star</p>
+        <button onclick="nextPage(4)">
+            Next
+        </button>
 
-<div class="wish-star" onclick="showWish()">
+    </section>
 
-⭐
+    <!-- =========================
+         PAGE 4
+    ========================== -->
 
-</div>
+    <section class="page" id="page4">
 
-<p id="wishText"></p>
+        <div class="section-label">
+            MAKE A WISH ✨
+        </div>
 
-<button onclick="nextPage(5)">
-Next
-</button>
+        <h1>Birthday Wish</h1>
 
-</section>
+        <p>Click the star and make a wish</p>
 
-<!-- PAGE 5 -->
+        <div class="wish-star" onclick="showWish()">
+            ⭐
+        </div>
 
-<section class="page" id="page5">
+        <p id="wishText" class="wish-text"></p>
 
-<h1>Your Gift </h1>
+        <button onclick="nextPage(5)">
+            Next
+        </button>
 
-<img src="images/gift.png" class="gift">
+    </section>
 
-<p>Special Gift For Jhili ❤️</p>
+    <!-- =========================
+         PAGE 5
+    ========================== -->
 
-<button onclick="nextPage(6)">
-Open Gift
-</button>
+    <section class="page" id="page5">
 
-</section>
+        <div class="section-label">
+            SOMETHING SPECIAL 🎁
+        </div>
 
-<!-- PAGE 6 -->
+        <h1>Your Gift</h1>
 
-<section class="page" id="page6">
+        <img
+            src="images/gift.png"
+            class="gift"
+            alt="Birthday Gift"
+        >
 
-<h1>Special Message ❤️</h1>
+        <p>
+            A Special Gift For Jhili ❤️
+        </p>
 
-<div class="card">
+        <button onclick="nextPage(6)">
+            Open Gift
+        </button>
 
-You are the best gift in my life.
+    </section>
 
-Stay Happy...
+    <!-- =========================
+         PAGE 6
+    ========================== -->
 
-Stay Blessed...
+    <section class="page" id="page6">
 
-Happy Birthday Jhili ❤️
+        <div class="section-label">
+            FROM THE HEART ❤️
+        </div>
 
-</div>
+        <h1>Special Message</h1>
 
-<button onclick="nextPage(7)">
-Celebrate 
-</button>
+        <div class="card">
 
-</section>
+            <div class="card-top-heart">
+                ❤️
+            </div>
 
-<!-- PAGE 7 -->
-<section class="page" id="page7">
+            <p>
+                You are the best gift in my life.
+                <br><br>
 
-<h1>Birthday Cake </h1>
+                Stay Happy...
+                <br>
+                Stay Blessed...
+                <br><br>
 
-<img id="cakeImage" src="images/Light Off.png" class="cake">
+                <strong>Happy Birthday Jhili ❤️</strong>
+            </p>
 
-<button onclick="lightCandle()">
-Light Candles
-</button>
+        </div>
 
-</section>
+        <button onclick="nextPage(7)">
+            Celebrate 🎉
+        </button>
 
-<!-- PAGE 8 -->
-<section class="page" id="page8">
+    </section>
 
-<h1>Blow The Candles ❤️</h1>
+    <!-- =========================
+         PAGE 7
+    ========================== -->
 
-<img id="cakeImage2" src="images/Light on.png" class="cake">
+    <section class="page" id="page7">
 
-<button onclick="blowCandle()">
-Blow Candles
-</button>
+        <div class="section-label">
+            ONE MORE SURPRISE 🎂
+        </div>
 
-</section>
+        <h1>Birthday Cake</h1>
 
-<!-- PAGE 9 -->
+        <img
+            id="cakeImage"
+            src="images/Light Off.png"
+            class="cake"
+            alt="Birthday Cake"
+        >
 
-<section class="page" id="page9">
+        <p>
+            Light the candles ❤️
+        </p>
 
-<h1>🎉 Happy Birthday Jhili 🎉</h1>
+        <button onclick="lightCandle()">
+            Light Candles 🕯️
+        </button>
 
-<img src="images/Last.png" class="cat">
+    </section>
 
-<p>
+    <!-- =========================
+         PAGE 8
+    ========================== -->
 
-May your life always be filled with happiness,
-love and beautiful memories.
+    <section class="page" id="page8">
 
-Happy Birthday Jhili ❤️
+        <div class="section-label">
+            MAKE IT SPECIAL ❤️
+        </div>
 
-</p>
+        <h1>Blow The Candles</h1>
 
-<button onclick="location.reload()">
+        <img
+            id="cakeImage2"
+            src="images/Light on.png"
+            class="cake"
+            alt="Birthday Cake"
+        >
 
-Complete
+        <p>
+            Close your eyes and make a wish...
+        </p>
 
-</button>
+        <button onclick="blowCandle()">
+            Blow Candles 💨
+        </button>
 
-</section>
+    </section>
 
-<script src="script.js"></script>
+    <!-- =========================
+         PAGE 9
+    ========================== -->
+
+    <section class="page" id="page9">
+
+        <div class="final-hearts">
+            ❤️ 💕 ❤️
+        </div>
+
+        <div class="section-label">
+            THE BIG MOMENT 🎉
+        </div>
+
+        <h1>Happy Birthday Jhili</h1>
+
+        <img
+            src="images/Last.png"
+            class="cat"
+            alt="Happy Birthday"
+        >
+
+        <p>
+            May your life always be filled with happiness,
+            love and beautiful memories.
+            <br><br>
+
+            <strong>Happy Birthday Jhili ❤️</strong>
+        </p>
+
+        <button onclick="location.reload()">
+            Celebrate Again ❤️
+        </button>
+
+    </section>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
